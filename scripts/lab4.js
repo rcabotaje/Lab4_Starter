@@ -35,6 +35,9 @@ function discountPrices(prices, discount) {
         return false;
     }
     for(let i = 0; i < length; i++) {
+        if((Number.isNaN(prices[i]))){
+            return false;
+        }
         discountedPrice = prices[i] * (1 - discount);
         discounted.push(discountedPrice);
     }
